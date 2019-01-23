@@ -1,5 +1,7 @@
 # mocha-test-cases
 
+[![Build Status](https://travis-ci.com/maxjoehnk/mocha-test-cases.svg?branch=master)](https://travis-ci.com/maxjoehnk/mocha-test-cases)
+
 This package provides support for test cases in mocha.
 Right now there is Typescript support for up to 5 arguments, after which its just an `any[]`.
 
