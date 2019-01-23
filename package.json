@@ -1,14 +1,22 @@
 {
   "name": "mocha-test-cases",
   "main": "lib/index.js",
+  "version": "1.0.0",
   "scripts": {
-    "test": "mocha -r ts-node/register 'tests/**/*.ts'"
+    "prebuild": "rimraf lib",
+    "build": "tsc -p tsconfig.json",
+    "test": "mocha -r ts-node/register 'tests/**/*.ts'",
+    "prepare": "yarn build"
   },
+  "files": [
+    "lib/**"
+  ],
   "devDependencies": {
     "@types/chai": "^4.1.7",
     "@types/mocha": "^5.2.5",
     "chai": "^4.2.0",
     "mocha": "^5.2.0",
+    "rimraf": "^2.6.3",
     "ts-node": "^7.0.1",
     "typescript": "^3.2.4"
   }
