@@ -1,21 +1,21 @@
 {
-  "name": "mocha-test-cases",
+  "name": "test-cases",
   "main": "lib/index.js",
-  "description": "Provides support for test cases in mocha.",
-  "homepage": "https://github.com/maxjoehnk/mocha-test-cases",
+  "description": "Provides support for test cases in most test runners.",
+  "homepage": "https://github.com/maxjoehnk/test-cases",
   "bugs": {
-    "url": "https://github.com/maxjoehnk/mocha-test-cases/issues"
+    "url": "https://github.com/maxjoehnk/test-cases/issues"
   },
   "author": "Max Jöhnk <maxjoehnk@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/maxjoehnk/mocha-test-cases.git"
+    "url": "https://github.com/maxjoehnk/test-cases.git"
   },
   "license": "GPL-3.0",
   "version": "1.0.0",
   "keywords": [
-    "mocha",
-    "test"
+    "test",
+    "testcase"
   ],
   "scripts": {
     "prebuild": "rimraf lib",
@@ -34,8 +34,5 @@
     "rimraf": "^2.6.3",
     "ts-node": "^7.0.1",
     "typescript": "^3.2.4"
-  },
-  "peerDependencies": {
-    "mocha": "^5.2.0"
   }
 }
