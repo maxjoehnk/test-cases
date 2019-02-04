@@ -1,6 +1,9 @@
-import { test } from '../src';
-import { suite } from 'mocha';
+import { setup } from '../src';
+import * as mocha from 'mocha';
 import { assert } from 'chai';
+
+const test = setup(mocha.test);
+const { suite } = mocha;
 
 suite('Test', () => {
     test
