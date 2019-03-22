@@ -92,7 +92,7 @@ export function setup<Runner extends TestRunner>(testRunner: Runner): EnhancedTe
 
 function printTestCase(testCase: any[]): string {
     return testCase
-        .map(arg => arg.toString())
+        .map(arg => JSON.stringify(arg))
         .reduce((a, b) => `${a}, ${b}`, '')
         .substring(2);
 }
