@@ -16,4 +16,14 @@ suite('Test', () => {
     test('a basic test', () => {
         assert.equal(true, true);
     });
+
+    test
+        .case(null)
+        .run('null case', (arg) => {
+            assert.isNull(arg);
+        });
+
+    test.case(undefined).run('undefined case', arg => {
+        assert.isUndefined(arg);
+    });
 });
