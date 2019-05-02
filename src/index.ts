@@ -1,42 +1,42 @@
-type TestRunner = (desc: string, fn: () => void) => void;
+export type TestRunner = (desc: string, fn: () => void) => void;
 
-interface TestCaseChain1<A> {
+export interface TestCaseChain1<A> {
     case(a: A): TestCaseChain1<A>;
 
     run(msg: string, cb: (a: A) => void): void;
 }
 
-interface TestCaseChain2<A, B> {
+export interface TestCaseChain2<A, B> {
     case(a: A, b: B): TestCaseChain2<A, B>;
 
     run(msg: string, cb: (a: A, b: B) => void): void;
 }
 
-interface TestCaseChain3<A, B, C> {
+export interface TestCaseChain3<A, B, C> {
     case(a: A, b: B, c: C): TestCaseChain3<A, B, C>;
 
     run(msg: string, cb: (a: A, b: B, c: C) => void): void;
 }
 
-interface TestCaseChain4<A, B, C, D> {
+export interface TestCaseChain4<A, B, C, D> {
     case(a: A, b: B, c: C, d: D): TestCaseChain4<A, B, C, D>;
 
     run(msg: string, cb: (a: A, b: B, c: C, d: D) => void): void;
 }
 
-interface TestCaseChain5<A, B, C, D, E> {
+export interface TestCaseChain5<A, B, C, D, E> {
     case(a: A, b: B, c: C, d: D, e: E): TestCaseChain5<A, B, C, D, E>;
 
     run(msg: string, cb: (a: A, b: B, c: C, d: D, e: E) => void): void;
 }
 
-interface TestCaseChain {
+export interface TestCaseChain {
     case(...args: any[]): TestCaseChain;
 
     run(msg: string, cb: (...args: any[]) => void): void;
 }
 
-interface TestCaseFunction {
+export interface TestCaseFunction {
     case<A>(a: A): TestCaseChain1<A>;
 
     case<A, B>(a: A, b: B): TestCaseChain2<A, B>;
@@ -50,7 +50,7 @@ interface TestCaseFunction {
     case(...args: any[]): TestCaseChain;
 }
 
-type EnhancedTestRunner<Runner extends TestRunner> = TestCaseFunction & Runner;
+export type EnhancedTestRunner<Runner extends TestRunner> = TestCaseFunction & Runner;
 
 export function setup<Runner extends TestRunner>(testRunner: Runner): EnhancedTestRunner<Runner> {
     function createTestCase<A>(a: A): TestCaseChain1<A>;
