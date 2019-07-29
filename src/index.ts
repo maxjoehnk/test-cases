@@ -74,9 +74,7 @@ export function setup<Runner extends TestRunner>(testRunner: Runner): EnhancedTe
 
         function runTestCases(msg: string, testFunction: () => void) {
             testCases.forEach(testCase => {
-                testRunner(`${msg} (${printTestCase(testCase)})`, () => {
-                    testFunction.apply(null, testCase);
-                });
+                testRunner(`${msg} (${printTestCase(testCase)})`, testFunction.bind(null, ...testCase));
             });
         }
 
