@@ -11,7 +11,7 @@
     "type": "git",
     "url": "https://github.com/maxjoehnk/test-cases.git"
   },
-  "license": "GPL-3.0",
+  "license": "MIT",
   "version": "1.0.3",
   "keywords": [
     "test",
